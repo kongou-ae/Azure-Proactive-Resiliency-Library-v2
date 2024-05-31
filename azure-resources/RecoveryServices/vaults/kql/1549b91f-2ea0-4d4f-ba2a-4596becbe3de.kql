@@ -3,6 +3,5 @@
 
 resources
 | where type == "microsoft.recoveryservices/vaults"
-| where properties.properties.enableCrossRegionRestore != true
+| where properties.redundancySettings.crossRegionRestore != "Enabled"
 | project recommendationId = "1549b91f-2ea0-4d4f-ba2a-4596becbe3de", name, id, tags
-
